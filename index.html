@@ -3,7 +3,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,29 +11,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="first-screen">
     <img src="images/photo.jpg" alt="Фон" class="fullscreen-bg">
-    <a href="#content" class="scroll-down-arrow">➣</a>
+    <div class="hero-content">
+        <h1>Проект</h1>
+        <p class="hero-subtitle">Поиск экзопланет актуальными программными методами.</p>
+        <p class="hero-subtitle">☭☭СЛАВА МАРКСУ!☭☭</p>
+    </div>
+    <a href="#authors" class="scroll-down-arrow">➣</a>
 </header>
-<main>
-    <section id="content" class="full-page-block">
-        <h1>Авторы</h1>
-    <div class="authors-container">
-        <div class="author-card">
-        <img src="-------" alt="Трифонов Пётр Александрович">
-        <div class="authors">Трифонов Пётр Александрович</div>
-    </div>
 
-    <div class="author-card">
-        <img src="-------" alt="Бхаскаран Наир Виджай Рам">
-        <div class="authors">Бхаскаран Наир Виджай Рам</div>
-    </div>
-        <!-- <div class="authors">Трифонов Пётр Александрович</div>
-        <div class="authors">Бхаскаран Наир Виджай Рам</div> -->
+<main>
+    <!-- Блок: Авторы -->
+    <section id="authors" class="full-page-block">
+        <h2 class="section-title">Авторы проекта</h2>
+        <div class="authors-container">
+            <div class="author-card">
+                <img src="images/author1.jpg" alt="Трифонов Пётр Александрович">
+                <div class="authors">Трифонов Пётр Александрович</div>
+            </div>
+            <div class="author-card">
+                <img src="images/author2.jpg" alt="Бхаскаран Наир Виджай Рам">
+                <div class="authors">Бхаскаран Наир Виджай Рам</div>
+            </div>
+        </div>
     </section>
-    <section>
-        <!-- Следующая секция -->
+
+    <!-- Блок: О Проекте (Тема и Актуальность) -->
+    <section id="about" class="text-page-block">
+        <div class="content-card">
+            <h2 class="section-title-left">Тема и актуальность исследования</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Тема работы</h3>
+                    <p>Методы обнаружения и классификация потенциально обитаемых экзопланет за пределами Солнечной системы.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Актуальность</h3>
+                    <p>Поиск экзопланет — одно из самых динамично развивающихся направлений современной астрофизики. Открытие тысяч новых миров космическими телескопами Kepler, TESS и James Webb приближает человечество к ответу на фундаментальный вопрос: одиноки ли мы во Вселенной?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок: Астрономическая справка -->
+    <section id="reference" class="text-page-block">
+        <div class="content-card">
+            <h2 class="section-title-left">Астрономическая справка</h2>
+            <div class="reference-content">
+                <p><strong>Экзопланета</strong> — это планета, находящаяся вне Солнечной системы. Большинство известных планет открыто с помощью двух ключевых методов:</p>
+                <ul>
+                    <li><strong>Метод транзитной фотометрии</strong> — фиксация падения яркости звезды при прохождении планеты перед её диском.</li>
+                    <li><strong>Метод лучевых скоростей</strong> — измерение "покачивания" звезды под действием гравитации обращающейся вокруг неё планеты.</li>
+                </ul>
+                <p>Главная цель современных исследований — поиск планет в <em>"зоне обитаемости"</em> (зоне Златовласки), где температурные условия позволяют воде существовать в жидком виде.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок: Источники -->
+    <section id="sources" class="text-page-block">
+        <div class="content-card">
+            <h2 class="section-title-left">Источники информации</h2>
+            <ul class="sources-list">
+                <li><a href="https://nasa.gov" target="_blank">NASA Exoplanet Archive</a> — Официальный архив и база данных экзопланет NASA.</li>
+                <li><a href="https://esa.int" target="_blank">European Space Agency (ESA)</a> — Материалы космических миссий Европейского космического агентства.</li>
+                <li>Маров М. Я. «Космос: От Солнечной системы до экзопланет» — Учебное пособие по астрофизике.</li>
+            </ul>
+        </div>
     </section>
 </main>
+
 </body>
 </html>

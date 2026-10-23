@@ -11,18 +11,20 @@ html {
 
 body {
     font-family: 'Trilobit', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #08090C; /* Минималистичный глубокий космический фон */
+    color: #F3F4F6;            /* Светлый комфортный цвет для чтения */
     margin: 0;    
 }
 
+/* Первый экран */
 .first-screen {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fullscreen-bg {
@@ -35,84 +37,191 @@ body {
     z-index: -1;
 }
 
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #E5E7EB;
+    margin-top: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
 .scroll-down-arrow {
-    font-size: 100px;
-    color: rgb(196, 196, 196);
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) rotate(90deg); 
+    transition: color 0.3s;
 }
 
-/* Второй экран с авторами */
+.scroll-down-arrow:hover {
+    color: #fff;
+}
+
+/* Базовая разметка блоков */
 .full-page-block {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    box-sizing: border-box;
     background-image: url('images/images.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
-    width: 100%; 
-    min-width: 100vw; 
-    flex-shrink: 0; 
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    padding: 60px 20px;
 } 
 
-.authors-container {
+.text-page-block {
+    min-height: auto;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Прижимает первый элемент влево, второй — вправо */
-    width: 80%;                     /* Ширина зоны, в пределах которой они расходятся (можно менять) */
-    max-width: 1000px;              /* Чтобы на очень больших экранах они не разъезжались слишком далеко */
-    margin-top: 40px;               /* Отступ сверху от заголовка «Авторы» */
+    justify-content: center;
+    padding: 80px 20px;
+    background-color: #08090C;
 }
 
+/* Контейнеры контента */
+.content-card {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
 
+/* Блок авторов */
+.authors-container {
+    display: flex;
+    justify-content: center; 
+    gap: 50px;
+    width: 100%;                     
+    max-width: 1000px;              
+    margin-top: 40px;               
+    flex-wrap: wrap; /* Адаптивность для мобильных экранов */
+}
+
+.author-card {
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      
+    gap: 15px;                
+    flex: 1;
+    max-width: 300px;  /* Исправлено: убран ломающий min-width: 700px */
+}
+
+.author-card img {
+    width: 200px;             
+    height: 200px;
+    object-fit: cover; /* Фотографии будут идеально ровными кругами/квадратами */            
+    border-radius: 50%;      /* Стильное круглое оформление */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* Стилизация типографики */
 h1 {
-    font-family: 'Playfair Display', serif; /* Шрифт заголовка */
-    font-size: 56px;                        /* Крупнее, чем у авторов (24px) */
-    font-weight: 700;                       /* Жирный */
-    color: #2c3e50;                         /* Цвет (как у авторов) */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Тень, чтобы читалось на фоне картинки */
-    text-align: center;                     /* По центру */
-    margin: 0;                              /* Убираем стандартные отступы браузера */
-    letter-spacing: 2px;                    /* Чуть разрядить буквы для красоты */
+    font-family: 'Playfair Display', serif; 
+    font-size: 64px;                        
+    font-weight: 900;                       
+    color: #FFFFFF;                         
+    text-shadow: 0 4px 12px rgba(0,0,0,0.8); 
+    margin: 0;                              
+    letter-spacing: 2px;                    
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    margin: 0;
+    text-align: center;
+}
+
+.section-title-left {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-left: 4px solid #60A5FA; /* Красивая неоновая линия акцента */
+    padding-left: 15px;
 }
 
 .authors {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    color: #2c3e50;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    text-align: center;           /* ← Центрируем текст */
-    /* width: 100%;   */
-    max-width: 40%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #E5E7EB;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-align: center;           
 }
 
-
-
-
-
-.author-card {
+/* Сетка для Темы и Актуальности */
+.info-grid {
     display: flex;
-    flex-direction: column;   /* Элементы друг под другом */
-    align-items: center;      /* Центрируем по горизонтали */
-    gap: 15px;                /* Отступ между фото и именем */
-    max-width: 45%;  /* ← было 40%, увеличиваем */
-    min-width: 700px; 
+    gap: 30px;
 }
 
+.info-box {
+    flex: 1;
+}
 
+.info-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #60A5FA;
+    font-size: 20px;
+    margin-top: 0;
+}
 
-.author-card img {
-    width: 200px;             /* Фиксированная ширина */
-    height: auto;             /* Высота подстроится автоматически — фото не обрежется */
-    border-radius: 10px;      /* Лёгкое скругление углов (можно убрать совсем) */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.info-box p, .reference-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #9CA3AF;
+}
+
+/* Списки и ссылки */
+.reference-content ul, .sources-list {
+    font-family: 'Montserrat', sans-serif;
+    color: #9CA3AF;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.sources-list {
+    list-style-type: square;
+}
+
+.sources-list a {
+    color: #60A5FA;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sources-list a:hover {
+    color: #93C5FD;
+    text-decoration: underline;
+}
+
+/* Элементы адаптивности */
+@media (max-width: 768px) {
+    h1 { font-size: 40px; }
+    .hero-subtitle { font-size: 18px; }
+    .info-grid { flex-direction: column; }
+    .content-card { padding: 20px; }
+    .author-card { max-width: 100%; }
 }
