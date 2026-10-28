@@ -382,6 +382,7 @@ h1 {
     font-size: 18px;
     line-height: 1.6;
     margin: 0;
+    color: #9CA3AF;
 }
  
 /* Сетка с крупными метриками */
@@ -441,7 +442,7 @@ h1 {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 12px;
-    color: #60A5FA;
+    color: #9CA3AF;
 }
  
 /* Стили нижнего меню (Футера) */
